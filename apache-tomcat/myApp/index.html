@@ -1,0 +1,167 @@
+<!-- <html>
+<title> TTB Login Page </title>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<h1>TTB Login page</h1>
+	<div class="row">
+		<div class="col-12">
+			<button class="btn btn-primary" (click)="onPONL()">PONL Login</button>
+		</div>
+		<div class="col-12">
+			<button class="btn btn-primary" (click)="onPONL()">PONL Login</button>
+		</div>
+	</div>
+</body>
+</html> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <script src="./img/bootstrap-4.3.1" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./img/bootstrap-4.3.1/dist/css/bootstrap.min.css">
+
+    <title>TTB login page</title>
+  </head>
+  <style type="text/css">
+    .layout_block{
+        height: 165px;
+        border: 1px solid black;
+        background: #fff;
+        position: relative;
+        overflow-y: hidden;
+        -webkit-transition: width 2s, height .2s;
+        transition: width 2s, height .2s;
+    }
+
+    .grid_header h3{
+      padding: 10px 15px;
+      font-weight: normal;
+      height: 2.5 vw;
+      left: 0;
+      margin: 0;
+      overflow: hidden;
+      padding-left: 10px;
+      padding-top: 7px;
+      position: absolute;
+      right: 0px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background-color: #DDDDDD;
+    }
+
+
+  </style>
+  <body>
+  	<div class="container mt-4">
+  		 <h1 style="text-align: center; margin-bottom: 50px;">TTB Login Page</h1>
+    <!-- <div class="card" style="width: 20rem; padding: 20px;  background-color: cornsilk">
+    	<div class="col-md-12">
+    		<button class="btn btn-primary" onclick="onPONL()">PONL Login (Permit) Button</button>	
+    	</div>	
+    		<div class="col-md-12 my-2">
+    		<button class="btn btn-secondary" onclick="onFONL()">FONL Login (Travelocity.com)</button>	
+    	</div>	
+    		<div class="col-md-12 my-2">
+    		<button class="btn btn-success" onclick="onCOLA()">COLA Login (Avis.com)</button>	
+    	</div>	
+    		<div class="col-md-12">
+    		<button class="btn btn-primary" onclick="onNewUser()">New Users</button>	
+    	</div>	
+    </div> -->
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="layout_block">
+              <div class="grid_header">
+                <h3>PONL Application</h3>
+              </div>
+              <div style="margin-top: 60px;">
+                <div class="row ml-0 mr-0">
+                <div class="col-md-4">
+                  <div style="">
+                    <img src="./img/ttb_logo.svg.png" alt="PONL_image" style="width: 92px">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                   <button class="btn btn-primary" onclick="onPONL()">PONL Login</button>
+                  </div>
+                  </div>  
+              </div>
+            </div>
+         </div>
+            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="layout_block">
+              <div class="grid_header">
+                <h3>FONL Application</h3>
+              </div>
+              <div style="margin-top: 60px;">
+                <div class="row ml-0 mr-0">
+                <div class="col-md-4">
+                  <div style="">
+                    <img src="./img/ttb_logo.svg.png" alt="FONL_image" style="width: 92px">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <button class="btn btn-secondary" onclick="onFONL()">FONL Login</button>
+                  </div>
+                  </div>  
+              </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="layout_block">
+              <div class="grid_header">
+                <h3>COLA Application</h3>
+              </div>
+              <div style="margin-top: 60px;">
+                <div class="row ml-0 mr-0">
+                <div class="col-md-4">
+                  <div style="">
+                    <img src="./img/ttb_logo.svg.png" alt="FONL_image" style="width: 92px">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                <button class="btn btn-success" onclick="onCOLA()">COLA Login</button> 
+                  </div>
+                  </div>  
+              </div>
+            </div>
+         </div>
+    </div>
+    <div class="row" style="margin-top: 50px">
+      <button type="button" class="btn btn-secondary btn-lg btn-block mx-3" onclick="onNewUser()">New Users</button>
+    </div>
+
+  	</div>
+  	<script type="text/javascript">
+  	function onPONL(){
+  			window.open("https://localhost:9443/identity?sp_id=PermitIdP2Post","_blank"); 
+        // window.open("https://18.208.118.111:9443/identity?sp_id=PostPonl","_blank"); 
+  		}
+
+  		function onFONL(){
+  			window.open("http://localhost:8080/travelocity.com/samlsso?SAML2.HTTPBinding=HTTP-POST","_blank");
+        // window.open("http://18.208.118.111:9090/travelocity.com/samlsso?SAML2.HTTPBinding=HTTP-Redirect","_blank");
+  		}
+
+  		function onCOLA(){
+  			window.open("http://localhost:8080/avis.com/samlsso?SAML2.HTTPBinding=HTTP-POST","_blank");
+        // window.open("http://18.208.118.111:9090/avis.com/samlsso?SAML2.HTTPBinding=HTTP-Redirect","_blank");
+  		}
+
+  		function onNewUser(){
+  			location.replace("https://localhost:9443/accountrecoveryendpoint/register.do");
+        // location.replace("https://18.208.118.111:9443/accountrecoveryendpoint/register.do");
+  		}
+  	</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <!--  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+ 
+  </body>
+</html>
