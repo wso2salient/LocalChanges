@@ -36,7 +36,18 @@
 <%@ page import="org.wso2.carbon.identity.application.authentication.endpoint.util.EndpointConfigManager" %>
 
 <jsp:directive.include file="init-loginform-action-url.jsp"/>
+<style type="text/css">
+  
+  .field-icon {
+  float: right;
+  background-image: url('./image/eye.png');
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
 
+</style>
 
 <script>
         function submitCredentials (e) {
@@ -55,24 +66,30 @@
                 if(selectedApplication == 'local'){
                     // userName.value = "ttb" + "/" + userName.value.trim();
                   userName.value =  userName.value.trim();  // Hemal
+                  alert('local........'+userName.value);
              
                 } else {
-                    // userName.value = "ttb" + "/" + userName.value.trim();
+                    // userName.value = "ttb" + "/" + userName.value.trim();  
                   userName.value = selectedApplication + "/" + userName.value.trim();  // Hemal
-             
+                  alert('Another user then local.....'+userName.value);
                 }
                 
                }
                else if (sp.value.trim() == "travelocity.com") { 
-                    userName.value =  selectedApplication +"/" + userName.value.trim();           // Hemal
+                    userName.value =  selectedApplication + "/" + userName.value.trim();           // Hemal
+                    alert('Travelocity.......'+ userName.value);
                      // userName.value = "Fonl"+"/" + userName.value.trim();
                 } else if(sp.value.trim() == "avis.com") {
-                    userName.value =  selectedApplication +"/" + userName.value.trim();   // Hemal
+                    userName.value =  selectedApplication + "/" + userName.value.trim();   // Hemal
+                    alert('Avis.......'+ userName.value);
                     // userName.value = "Fonl"+"/" + userName.value.trim();
                } 
               else 
                { 
-                userName.value = userName.value.trim();
+                // userName.value = selectedApplication + "/" + userName.value.trim(); // Hemal
+               
+                userName.value =  selectedApplication + "/" + userName.value.trim();
+                 alert('Else user.....'+userName.value);
                } 
             if(userName.value){
                 document.getElementById("loginForm").submit();
@@ -84,7 +101,41 @@
             window.history.back();
         }
 
-    
+        function showPassword() {
+             var x = document.getElementById("password");
+            
+         
+            if (x.type === "password") {
+              x.type = "text";
+             document.getElementById("showPass").innerHTML = "Hide";
+             
+            } else {
+              x.type = "password";
+             document.getElementById("showPass").innerHTML = "Show";
+            
+            }
+      }
+
+      function mouseDown(){
+      
+         var x = document.getElementById("password");
+       
+          if (x.type === "password") {
+              x.type = "text";
+             
+            } 
+      }
+
+
+      function mouseUp(){
+      
+         var x = document.getElementById("password");
+       
+         if (x.type !== "password") {
+              x.type = "Password";
+              
+            } 
+      }
 
    //   function submitCredentials (e) {
    //          e.preventDefault();
@@ -198,10 +249,11 @@
     </div>
     <%}%>
 
-    <% if (!isIdentifierFirstLogin(inputType)) { %>
+    <% if (!isIdentifierFirstLogin(inputType)) { %> 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
         <label for="application">Select Your Userstore Domain</label>
         <select class="form-control" id="selectedApplication">
+          <option>Select</option>  
           <option value="ttb">ttb</option>
           <option value="Ponl">ponl</option>
           <option value="Fonl">fonl</option>
@@ -217,7 +269,21 @@
     <% }%>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
         <label for="password"><%=AuthenticationEndpointUtil.i18n(resourceBundle, "password")%></label>
+        <span class="pull-right">
+          <input type="checkbox" onclick="showPassword()" class="float-right"> show Password
+        </span>
+        
         <input id="password" name="password" type="password" class="form-control" placeholder="" autocomplete="off">
+         <!-- <p class="form-control-feedback glyphicon glyphicon-eye-open" onmousedown="mouseDown()" onmouseup="mouseUp()">Test</p> -->
+       <!--  <div class="input-group">
+           <input id="password" name="password" type="password" class="form-control" placeholder="" autocomplete="off">
+          <  <i class="form-control-feedback glyphicon glyphicon-eye-open" id="showPass" onmousedown="mouseDown()" onmouseup="mouseUp()"></i> --
+               <div class="input-group-append">
+                  <button class="btn btn-default" id="showPass" type="button" onmousedown="mouseDown()" onmouseup="mouseUp()"><i class="form-control-feedback glyphicon glyphicon-eye-open" id="showPass"></i></button>
+              </div>
+        </div> -->
+
+    
     </div>
     <%
         if (reCaptchaEnabled) {
