@@ -114,7 +114,7 @@
             </tr>
 
         </table>
-        <h1>Avis.COM</h1>
+        <h1>COLA Application</h1>
         <hr />
         <div class="product-box">
             <%
@@ -128,7 +128,7 @@
             <%
                 }
             %>
-            <a href="../travelocity.com/home.jsp"> Travelocity.COM </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.jsp">Go to Login page</a><br/>
+            <a href="../travelocity.com/home.jsp"> FONL Application </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.jsp">Go to Login page</a><br/>
             <table>
                 <%
                     if(saml2SSOAttributes != null){
