@@ -18,6 +18,7 @@ cp avis.com.war $APACHE_HOME/webapps/
 cp -r ./myApp $APACHE_HOME/webapps/ 
 sleep 10
 cp home.jsp $APACHE_HOME/webapps/avis.com
+cp index.jsp $APACHE_HOME/webapps/avis.com
 cp $APACHE_HOME/webapps/travelocity.com/WEB-INF/classes/wso2carbon.jks $APACHE_HOME/webapps/avis.com/WEB-INF/classes/
 
  
