@@ -35,6 +35,7 @@
 <%@ page import="org.wso2.carbon.base.ServerConfiguration" %>
 <%@ page import="org.wso2.carbon.identity.application.authentication.endpoint.util.EndpointConfigManager" %>
 
+
 <jsp:directive.include file="init-loginform-action-url.jsp"/>
 <style type="text/css">
   
@@ -46,23 +47,50 @@
   position: relative;
   z-index: 2;
 }
+.margin-top-20{
+    margin-top: 20px;
+}
 
 </style>
 
+
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 <script>
+    
+   function RegisterNow() {
+           $("#registerNow").modal('show');
+    }
+   
+   //   window.onload = function() {
+   //     var spName = "<%=request.getParameter("sp")%>";
+   //      if ( spName == 'PermitIdP2Post' || spName == 'travelocity.com' || spName == 'avis.com') {
+             
+   //          document.getElementById("selectedAppId").style.display = "none";
+   //      } else {
+         
+   //        document.getElementById("selectedAppId").style.display = "block";
+   //      }
+   // }
+          
         function submitCredentials (e) {
             e.preventDefault();
             var userName = document.getElementById("username");
-           
+             // var password = document.getElementById("password").value;
+            //  alert('username....'+userName);
 // Added By Hemal -----------------------------------------------------------------------
             var selectedApplication = document.getElementById("selectedApplication").value;
-            
-// --------------------------------------------------------------------------------------
+             alert('selectedApplication....'+selectedApplication);
+// --------------------------------------------------------------
              var sp = document.getElementById("sp"); 
                    
+              
+
               if(sp.value.trim() == "PermitIdP2Post") 
                { 
-
+                
                 if(selectedApplication == 'local'){
                     // userName.value = "ttb" + "/" + userName.value.trim();
                   userName.value =  userName.value.trim();  // Hemal
@@ -70,28 +98,33 @@
              
                 } else {
                     // userName.value = "ttb" + "/" + userName.value.trim();  
-                  userName.value = selectedApplication + "/" + userName.value.trim();  // Hemal
+                      userName.value = "ponl" + "/" + userName.value.trim();  
+                  // userName.value = selectedApplication + "/" + userName.value.trim();  // Hemal
                   alert('Another user then local.....'+userName.value);
                 }
                 
                }
                else if (sp.value.trim() == "travelocity.com") { 
-                    userName.value =  selectedApplication + "/" + userName.value.trim();           // Hemal
+                  // userName.value = selectedApplication + "/" + userName.value.trim();  
+                    userName.value =  "fonl" + "/" + userName.value.trim();           // Hemal
                     alert('Travelocity.......'+ userName.value);
                      // userName.value = "Fonl"+"/" + userName.value.trim();
                 } else if(sp.value.trim() == "avis.com") {
-                    userName.value =  selectedApplication + "/" + userName.value.trim();   // Hemal
+                    userName.value = "fonl" + "/" + userName.value.trim();  
+                    // userName.value =  selectedApplication + "/" + userName.value.trim();   // Hemal
                     alert('Avis.......'+ userName.value);
                     // userName.value = "Fonl"+"/" + userName.value.trim();
                } 
               else 
                { 
                 // userName.value = selectedApplication + "/" + userName.value.trim(); // Hemal
-               
-                userName.value =  selectedApplication + "/" + userName.value.trim();
-                 alert('Else user.....'+userName.value);
+                
+                userName.value = userName.value.trim();
+                  
+                //  alert('Else user.....'+userName.value);
                } 
             if(userName.value){
+                alert('Submit.....'+userName.value);
                 document.getElementById("loginForm").submit();
             }
         }
@@ -116,26 +149,7 @@
             }
       }
 
-      function mouseDown(){
-      
-         var x = document.getElementById("password");
-       
-          if (x.type === "password") {
-              x.type = "text";
-             
-            } 
-      }
-
-
-      function mouseUp(){
-      
-         var x = document.getElementById("password");
-       
-         if (x.type !== "password") {
-              x.type = "Password";
-              
-            } 
-      }
+     
 
    //   function submitCredentials (e) {
    //          e.preventDefault();
@@ -166,6 +180,29 @@
    //  }
 
 </script>
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="registerNow" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">TTB Online</h4>
+          </div>
+          <div class="modal-body">
+            <p>You have access only for FONL and COLA Application</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
 
 <%!
     private static final String JAVAX_SERVLET_FORWARD_REQUEST_URI = "javax.servlet.forward.request_uri";
@@ -251,17 +288,7 @@
 
     <% if (!isIdentifierFirstLogin(inputType)) { %> 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
-        <label for="application">Select Your Userstore Domain</label>
-        <select class="form-control" id="selectedApplication">
-          <option>Select</option>  
-          <option value="ttb">ttb</option>
-          <option value="Ponl">ponl</option>
-          <option value="Fonl">fonl</option>
-          <option value="local">local</option>
-        </select>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
-        <label for="username"><%=AuthenticationEndpointUtil.i18n(resourceBundle, "username")%></label>
+        <label for="username"><%=AuthenticationEndpointUtil.i18n(resourceBundle, "Username or email address")%></label>
         <input id="username" name="username" type="text" class="form-control" tabindex="0" placeholder="" required>
     </div>
     <% } else {%>
@@ -285,6 +312,18 @@
 
     
     </div>
+    <div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group margin-top-20" >
+            <!-- <label for="application">Select Your Userstore Domain</label> -->
+            <select class="form-control" id="selectedApplication">
+              <option>Select An Account</option>  
+              <option value="ttb">ttb</option>
+              <option value="Ponl">ponl</option>
+              <option value="Fonl">fonl</option>
+              <option>local</option>
+            </select>
+        </div>
+         </div>
     <%
         if (reCaptchaEnabled) {
     %>
@@ -308,7 +347,7 @@
         <input type="hidden" name="sessionDataKey" value='<%=Encode.forHtmlAttribute
             (request.getParameter("sessionDataKey"))%>'/>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-double">
+    <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-double">
         <div class="alert alert-warning margin-bottom-3 padding-10" role="alert">
             <div>
                 <%=AuthenticationEndpointUtil.i18n(resourceBundle, "privacy.policy.cookies.short.description")%>
@@ -326,13 +365,13 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
         <div class="form-actions">
             <button
-                    class="wr-btn grey-bg col-xs-12 col-md-12 col-lg-12 uppercase font-extra-large margin-bottom-double"
+                    class="ttb-btn col-xs-6 col-md-4 col-lg-4 uppercase font-extra-large margin-bottom-double"
                     type="submit" onclick="submitCredentials(event)">
-                    <%=AuthenticationEndpointUtil.i18n(resourceBundle, "login")%>
+                    <%=AuthenticationEndpointUtil.i18n(resourceBundle, "log In")%>
             </button>
         </div>
     </div>
@@ -401,11 +440,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
             <div class="form-actions">
             <%=AuthenticationEndpointUtil.i18n(resourceBundle, "no.account")%>
-            <a id="registerLink" href="<%=getRegistrationUrl(identityMgtEndpointContext, urlEncodedURL)%>">
+            <a id="registerLink" onclick="RegisterNow()" href="<%=getRegistrationUrl(identityMgtEndpointContext, urlEncodedURL)%>">
                 <%=AuthenticationEndpointUtil.i18n(resourceBundle, "register.now")%>
             </a>
             </div>
         </div>
+       
         <%
                 }
             }
@@ -433,7 +473,6 @@
         }
     
         private String getRegistrationUrl(String identityMgtEndpointContext, String urlEncodedURL) {
-        
             return identityMgtEndpointContext + "/register.do?callback=" + Encode.forHtmlAttribute(urlEncodedURL);
         }
     %>
