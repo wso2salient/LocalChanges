@@ -1,0 +1,370 @@
+ @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+  .ttbLogoClass {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+        }
+
+        .ttbLogoFooter {
+            width: 60px;
+            height: 60px;
+            
+            margin-bottom: 20px;
+        }       
+        .col-centered{
+            text-align: center;
+        }
+        header .header-ttb{
+    background: #003A6C;
+    min-height: 50px;
+    position: relative;
+}
+
+.footerBottom{
+    margin-top: 20px;
+}
+
+.readMoreButton{
+        border: 2px outset white;
+        background: transparent;
+        height:45px;
+        color: white;
+        margin-top: 20px;
+        cursor:pointer;
+}
+
+.bkColor{
+   background-color: #0053A2;
+   font-family: Publis Sans;
+   font-size: 14pt;
+}
+.backImage{
+      /* The image used */
+      
+  background: url(../images/AlcoholAndTobaccoTaxAndTradeBureau-Seal.png) repeat;
+  background: linear-gradient(rgba(23,554,232,65));
+  position: absolute;
+    
+
+  /* Full height */
+ /* height: 120%; 
+  max-width: 75%;*/
+  /* Center and scale the image nicely */
+    top: -50px;
+    z-index: -10;
+    background-size: cover;
+  opacity: 0.2;
+}
+.loginStyle{
+    
+    background-color: #F2F2F2;
+}
+ .subHeading{
+    color: white;
+    font-family: Merriweather;
+    margin-top: 5%;
+    /* font-weight: bold; */
+}
+.subHeadingMobile{
+    color: white;
+    font-family: Merriweather;
+    margin-top: 5%;
+    padding: 10px;
+}
+.privacyPolicyClass{
+    color: white;
+    font-family: PublicSans-Light;
+    font-size: 12pt;
+}
+
+.h1Heading{
+    color: #333333;
+    font-family: Merriweather;
+     font-size: 32pt;
+}
+.h3Heading{
+    color: #333333;
+    font-family: Merriweather;
+     font-size: 18pt;
+     font-weight: bold;
+}
+.headerImage{
+    background: url(../images/header_ttb_logo.png) repeat;
+    background: linear-gradient(rgba(23,554,232,65));
+    position: absolute;
+      
+  
+    /* Full height */
+   /* height: 120%; 
+    max-width: 75%;*/
+    /* Center and scale the image nicely */
+      top: -50px;
+      z-index: -10;
+      background-size: cover;
+}
+.h2Heading {
+     font-family: Merriweather;
+     font-size: 27pt;
+}
+.headerFlagClass{
+    height: 15px;
+    width: 20px;
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+#howToAllow:hover {
+    text-decoration: underline;
+  }
+#lockSign:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f023";
+    display: inline-block;
+    padding-right: 20px;
+    vertical-align: middle;
+    float: right;
+    font-weight:600;
+}
+.margin-left-15{
+    margin-left: 15px;
+}
+ul {
+  /* list-style-type: none; */
+}
+li {
+    /* margin-top: 10px;   */
+    /* border-bottom: 1px solid #ddd; */
+  }
+
+  div .margin-bottom-10{
+    margin-bottom: 10px;
+}  
+li .footerList {
+    margin-bottom: 10px;
+    font-size: 14pt;
+    font-family: Public Sans;
+} 
+
+button.ttb-btn{
+    background-color: #FF6633;
+     font-weight: normal;
+    font-size: 13px;
+    color: #fff;
+    padding: 5px 5px;
+    display: inline-block;
+    border: none;
+    float: right;
+    text-transform: capitalize;
+}
+
+
+/* Div act as accordian */
+.divBox{
+    background-color: red;
+}
+/*Accordian start*/
+    /* start */
+   
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    /* margin-bottom: 15px; */
+}
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+    /* border-radius: 3px; */
+}
+
+ .panel-title > a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f068";
+    padding-right: 5px;
+    font-size: 25px;
+}
+ .panel-title > a.collapsed:before {
+    float: right !important;
+    content:"\f067";
+} 
+ .panel-title a{
+    display: block;
+    padding: 12px 15px;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    /* color: blue; */
+    /*border: 1px solid #ececec;*/
+    box-shadow: 0 0 10px rgba(0,0,0,.05);
+    position: relative;
+    transition: all 0.5s ease 0s;
+    /* float: right !important; */
+    content:"\f067";
+    box-shadow: 0 1px 2px rgba(43,59,93,0.30);
+}
+.panelBorder{
+    border: 1px solid black;
+}
+.panel-title a.collapsed{
+    box-shadow: none;
+    color: #676767;
+    box-shadow: 0 1px 2px rgba(43,59,93,0.30);
+}
+
+ .panel-title a.collapsed:before{
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f067";
+    padding-right: 5px;
+    font-size: 25px;
+}
+ .panel-title a.collapsed:before{
+    color: #676767;
+    transform: rotate(0);
+}
+/* #accordion .panel-title a:after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #ececec;
+    position: absolute;
+    top: 0;
+    right: 55px;
+} */
+
+#accordion .panel-body{
+    padding: 0px;
+    border: none;
+    font-size: 15px;
+    color: #615f5f;
+    line-height: 27px;
+}
+.headingMobile{
+    display: inline;
+    font-family: FontAwesome;
+    font-weight: 500;
+    content: "\f023";
+}
+
+    /* End */
+  /* .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
+ .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
+    .hidden-sm .hidden-xs{
+        display: none;
+    }  */
+
+/* ----- v CAN BE DELETED v ----- */
+
+/* .demo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.panel-title > a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f068";
+    padding-right: 5px;
+}
+.panel-title > a.collapsed:before {
+    float: right !important;
+    content:"\f067";
+} */
+
+/*Accordion end*/
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+        .loginStyle{
+        border: 2px solid blanchedalmond;
+        background-color: #F2F2F2;
+        top: -30px;
+    }
+    .imageWidth{
+        width: 700px; 
+        height: 700px;
+    }
+   /* .container{
+        width: 1400px;
+    }*/
+    .welcomeMessage{
+        color: white;
+        font-family: Merriweather;
+        margin-top: 5%;
+     }
+     .footer{
+    background-color: antiquewhite;     
+    font-size: 14pt;
+    font-family: Public Sans;
+     }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+ .welcomeMessage{
+    color: white;
+    font-family: Merriweather;
+    margin-top: 5%;
+    display: none;
+ }
+ .footer{
+     background-color: #0053A2;
+ }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .imageWidth{
+        width: 90%; 
+        height: 100%;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .mobileViewDiv{
+        height:40px;
+        overflow:hidden;
+        background-color: #F2F2F2;
+    }
+}
