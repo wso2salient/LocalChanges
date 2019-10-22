@@ -20,7 +20,7 @@ cp ./org.wso2.carbon.identity.application.ttbfonl.authenticator.basicauth-1.0.0.
 cp ./org.wso2.carbon.identity.application.ttbponl.authenticator.basicauth-1.0.0.jar $WSO2_HOME/components/dropins
 cp ./application-authentication.xml $WSO2_HOME/conf/identity/application-authentication.xml
 cp ./basicauth.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/basicauth.jsp
-cp ./ttb_login.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/
+cp ./ttb_login_page.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/
 cp ./default_login.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/
 cp ./travelocity_login.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/
 cp ./avis_app_login.jsp $WSO2_HOME/deployment/server/webapps/authenticationendpoint/
