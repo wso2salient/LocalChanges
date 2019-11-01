@@ -20,6 +20,20 @@
     position: relative;
 }
 
+.ttbLogoClass {
+          width: 60px;
+          height: 60px;
+      }
+      .col-centered{
+          text-align: center;
+      }
+      header .header-ttb{
+  background: #003A6C;
+  min-height: 50px;
+  position: relative;
+  background-color: #003A6C;
+}
+
 .footerBottom{
     margin-top: 20px;
 }
@@ -41,7 +55,7 @@
 .backImage{
       /* The image used */
       
-  background: url(../images/AlcoholAndTobaccoTaxAndTradeBureau-Seal.png) repeat;
+  background: url(../images/Background_seal_homepage.png) no-repeat;
   background: linear-gradient(rgba(23,554,232,65));
   position: absolute;
     
@@ -62,8 +76,8 @@
  .subHeading{
     color: white;
     font-family: Merriweather;
-    margin-top: 5%;
-    /* font-weight: bold; */
+    padding-top: 10%;
+    font-weight: bold; 
 }
 .subHeadingMobile{
     color: white;
@@ -71,16 +85,47 @@
     margin-top: 5%;
     padding: 10px;
 }
+.nextTosubHeading{
+    color: white;
+    font-family: Merriweather;
+    margin-top: 5%;
+     font-weight: bold;
+}
 .privacyPolicyClass{
     color: white;
     font-family: PublicSans-Light;
     font-size: 12pt;
 }
+.font-size-medium{
+    font-size: medium;
+}
+.ttbfooter{
+    background-color: #00305e;
+}
+
+  .ttbfooter ul li {
+    display: inline;
+    color: white;
+    font-weight: bold;
+  }
+
+  .ttbfooter ul li :hover{
+      text-decoration: underline;
+  }
 
 .h1Heading{
     color: #333333;
     font-family: Merriweather;
      font-size: 32pt;
+     font-weight: bold;
+}
+.newAndNoticeLI li{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    list-style: none;
+    border-bottom: 1px solid;
+    font-size: 21px;
+    font-weight: bold;
 }
 .h3Heading{
     color: #333333;
@@ -89,8 +134,8 @@
      font-weight: bold;
 }
 .headerImage{
-    background: url(../images/header_ttb_logo.png) repeat;
-    background: linear-gradient(rgba(23,554,232,65));
+    background: url(../images/TreasuryBanner.png) repeat;
+    /* background: linear-gradient(rgba(23,554,232,65)); */
     position: absolute;
       
   
@@ -98,9 +143,9 @@
    /* height: 120%; 
     max-width: 75%;*/
     /* Center and scale the image nicely */
-      top: -50px;
+      /* top: -50px;
       z-index: -10;
-      background-size: cover;
+      background-size: cover; */
 }
 .h2Heading {
      font-family: Merriweather;
@@ -111,6 +156,17 @@
     width: 20px;
     margin-left: 10px; 
     margin-right: 10px;
+}
+
+.headerFlagLink{
+    color: #333333;
+    /*text-decoration: underline;*/
+};
+
+.secureLogin{
+    color: #003A6C; 
+    font-family: Public Sans; 
+    font-size: 20pt;
 }
 
 #howToAllow:hover {
@@ -146,7 +202,6 @@ li .footerList {
 } 
 
 button.ttb-btn{
-    background-color: #FF6633;
      font-weight: normal;
     font-size: 13px;
     color: #fff;
@@ -155,6 +210,7 @@ button.ttb-btn{
     border: none;
     float: right;
     text-transform: capitalize;
+    border-radius: 12px;
 }
 
 
@@ -251,6 +307,8 @@ a:hover,a:focus{
     content: "\f023";
 }
 
+
+
     /* End */
   /* .panel-group .panel {
         border-radius: 0;
@@ -309,9 +367,7 @@ a:hover,a:focus{
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
         .loginStyle{
-        border: 2px solid blanchedalmond;
         background-color: #F2F2F2;
-        top: -30px;
     }
     .imageWidth{
         width: 700px; 

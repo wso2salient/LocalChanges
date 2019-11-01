@@ -6,7 +6,7 @@ body {
     position: relative;
 }
 header {
-    background: #222222;
+    background: #003A6C;;
     min-height: 50px;
     position: relative;
 }
@@ -54,7 +54,8 @@ footer > .container p, footer > .container-fluid p {
     margin-bottom: 0;
 }
 footer a, footer a:hover {
-    color: #cbcbcb;
+    /*color: #cbcbcb;*/
+    color: white;
 }
 
 .col-centered{
