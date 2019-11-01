@@ -1,0 +1,66 @@
+
+<div class="" style="background-color: #F3F6FE">
+    <div class="container my-4">
+        <div><h1><strong>News & Notice</strong></h1></div>
+        <div style="font-size: small; margin-bottom: 10px;">
+            <%java.text.DateFormat df = new java.text.SimpleDateFormat("MMMM"); %>
+            <%java.text.DateFormat dd = new java.text.SimpleDateFormat("dd"); %>
+            <%java.text.DateFormat dy = new java.text.SimpleDateFormat("yyyy"); %>
+            <div><%= df.format(new java.util.Date()) %> 
+                <%= dd.format(new java.util.Date()) %>, 
+                <%= dy.format(new java.util.Date()) %> 
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div style="padding-left: 10px;border-left: 12px solid gold;
+                        background-color: cornsilk;">
+                <div style="display: flex;">
+                    <div style="font-size: 40px; margin-left: 10px; margin-right: 10px;">&#9888;</div>
+                    <div><h1 style="margin-top: 10px;"><strong>Planned System Outage</strong></h1></div>
+                </div>
+                <!-- <div style="font-size: medium; padding-top: 10px;"><a href="#">Pay.gov will be Unavailable on
+                        October 5.</a></div>
+                <div style="font-size: medium; padding-top: 10px; margin-bottom: 20px;"><a href="#">TTBOnline.gov
+                        System Maintenance on October 10.</a></div> -->
+            </div>
+            <div style="margin-top: 10px;">
+                <a href="#">Pay.gov will be unavailable on October 5th.</a>
+            </div>
+            <div style="margin-top: 10px;">
+                    <div style="font-size: small; margin-bottom: 10px;">
+                            <%java.text.DateFormat dft = new java.text.SimpleDateFormat("MMMM"); %>
+                            <%java.text.DateFormat ddt = new java.text.SimpleDateFormat("dd"); %>
+                            <%java.text.DateFormat dyt = new java.text.SimpleDateFormat("yyyy"); %>
+                            <div><%= dft.format(new java.util.Date()) %> 
+                                <%= ddt.format(new java.util.Date()) %>, 
+                                <%= dyt.format(new java.util.Date()) %> 
+                            </div>
+                        </div>
+            </div>
+            <div style="margin-top: 10px;">
+                    <div>New Conditionally Approved Status in COLAs.</div>
+            </div>
+            <div style="margin-top: 10px;">
+                    <div>Now TTB can propose minor changes to your application so it matches the label(s) you submitted, and send it back to you as "Conditionally Approved." 
+                        You have 7 days to accept or decline the changes.   For details, check out.
+                        <a style="color: #333333;">What's New in COLAs Online 4.7 (PDF).</a>
+                    </div>
+            </div>
+            <div style="margin-top: 10px;">
+                    <div>New Conditionally Approved Status in COLAs.</div>
+            </div>
+            <div style="margin-top: 20px; margin-bottom: 30px;">
+                    <a href="#"><small>View order notice</small></a>
+                    <i style="font-size:20px; padding-left: 20px; color: #0053A2;" class="fa">&#xf0ab;</i>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <ul class="newAndNoticeLI">
+                <li>Visit the Public COLAs Registry</li>
+                <li>Visit Pay.gov</li>
+            </ul>
+        </div>
+    </div>    
+    </div>
+</div>
